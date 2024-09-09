@@ -319,7 +319,7 @@ export function Portfolio() {
     message: ''
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
@@ -327,7 +327,7 @@ export function Portfolio() {
     }));
   };
 
-  const handleSubmit = async (e/* : React.FormEvent<HTMLFormElement> */) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormStatus('sending')
 
