@@ -3,6 +3,7 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, Github, Linkedin, Mail, Send, Moon, Sun, Menu, X } from 'lucide-react'
+import Image from 'next/image';
 
 type Theme = 'light' | 'dark'
 const BackgroundGraphs = () => {
@@ -123,7 +124,7 @@ const projects = [
     id: 1,
     title: 'Django Application Development - User Registration Email Validation System',
     description: 'Developed and deployed with docker a Django-based application focused on user registration and email validation. Integrated JavaScript for enhanced user experience and real-time validation. Collaborated with a cross-functional team to ensure the application met project goals and deadlines.',
-    imgSrc: '/images/dashboard.png',
+    imgSrc: '/images/dashboard.PNG',
     caseStudyLink: '#',
     githubLink: '#',
   },
@@ -131,7 +132,7 @@ const projects = [
     id: 2,
     title: 'AI Model for Sign Language Recognition - Flutter App Integration',
     description: 'Trained an AI model to recognize sign language gestures from images. Integrated the model into a Flutter app, enabling real-time gesture recognition and user interaction. Conducted extensive testing and optimization to improve model accuracy and performance.',
-    imgSrc: '/images/ai3.png',
+    imgSrc: '/images/ai3.PNG',
     caseStudyLink: '#',
     githubLink: '#',
   },
@@ -139,7 +140,7 @@ const projects = [
     id: 3,
     title: 'Portofolio',
     description: 'This website describe all the project that I have worked on even though all of them didn\'t appear here.',
-    imgSrc: '/images/portofolio1.png',
+    imgSrc: '/images/portofolio1.PNG',
     caseStudyLink: '#',
     githubLink: '#',
   },
@@ -147,7 +148,7 @@ const projects = [
     id: 4,
     title: 'E-Learning Platform',
     description: 'E-Learning Platform created with PHP and in which I experiment the api stripe checkout as payment gateway.',
-    imgSrc: '/images/e-learning.png',
+    imgSrc: '/images/e-learning.PNG',
     caseStudyLink: '#',
     githubLink: '#',
   },
@@ -155,7 +156,7 @@ const projects = [
     id: 5,
     title: 'Portofolio',
     description: 'This website describe all the project that I have worked on even though all of them didn\'t appear here.',
-    imgSrc: '/images/portofolio2.png',
+    imgSrc: '/images/portofolio2.PNG',
     caseStudyLink: '#',
     githubLink: '#',
   },
@@ -163,7 +164,7 @@ const projects = [
     id: 6,
     title: 'Hotel and Show Reservations Platform',
     description: 'Simple interface that manages hotel and show reservations made using the django framework and mysql server. All back-end processes happens locally.',
-    imgSrc: '/images/hs.png',
+    imgSrc: '/images/hs.PNG',
     caseStudyLink: '#',
     githubLink: '#',
   },
@@ -437,9 +438,11 @@ export function Portfolio() {
                     transition={{ duration: 0.5, delay: project.id * 0.1 }}
                     className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
                   >
-                    <img
+                    <Image
                       src={project.imgSrc}
                       alt={project.title}
+                      width={500}
+                      height={300}
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-6">
