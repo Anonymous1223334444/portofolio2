@@ -125,8 +125,8 @@ const projects = [
     title: 'Django Application Development - User Registration Email Validation System',
     description: 'Developed and deployed with docker a Django-based application focused on user registration and email validation. Integrated JavaScript for enhanced user experience and real-time validation. Collaborated with a cross-functional team to ensure the application met project goals and deadlines.',
     imgSrc: '/images/dashboard.PNG',
-    caseStudyLink: '#',
-    githubLink: '#',
+    caseStudyLink: 'https://django-dashboard-docker-2d6c094b404f.herokuapp.com/authentication/login?next=/',
+    githubLink: 'https://github.com/Anonymous1223334444/django_dashboard.git',
   },
   {
     id: 2,
@@ -134,15 +134,15 @@ const projects = [
     description: 'Trained an AI model to recognize sign language gestures from images. Integrated the model into a Flutter app, enabling real-time gesture recognition and user interaction. Conducted extensive testing and optimization to improve model accuracy and performance.',
     imgSrc: '/images/ai3.PNG',
     caseStudyLink: '#',
-    githubLink: '#',
+    githubLink: 'https://github.com/Anonymous1223334444/decryptage_de_geste.git',
   },
   {
     id: 3,
     title: 'Portofolio',
     description: 'This website describe all the project that I have worked on even though all of them didn\'t appear here.',
     imgSrc: '/images/portofolio1.PNG',
-    caseStudyLink: '#',
-    githubLink: '#',
+    caseStudyLink: 'https://andresarr.netlify.app/',
+    githubLink: 'https://github.com/Anonymous1223334444/portofolio.git',
   },
   {
     id: 4,
@@ -150,15 +150,15 @@ const projects = [
     description: 'E-Learning Platform created with PHP and in which I experiment the api stripe checkout as payment gateway.',
     imgSrc: '/images/e-learning.PNG',
     caseStudyLink: '#',
-    githubLink: '#',
+    githubLink: 'https://github.com/Anonymous1223334444/web_project_semi_final.git',
   },
   {
     id: 5,
     title: 'Portofolio',
     description: 'This website describe all the project that I have worked on even though all of them didn\'t appear here.',
     imgSrc: '/images/portofolio2.PNG',
-    caseStudyLink: '#',
-    githubLink: '#',
+    caseStudyLink: 'https://portofoliowebdev.vercel.app/',
+    githubLink: 'https://github.com/Anonymous1223334444/portofolio2.git',
   },
   {
     id: 6,
@@ -166,7 +166,7 @@ const projects = [
     description: 'Simple interface that manages hotel and show reservations made using the django framework and mysql server. All back-end processes happens locally.',
     imgSrc: '/images/hs.PNG',
     caseStudyLink: '#',
-    githubLink: '#',
+    githubLink: 'https://github.com/Anonymous1223334444/Show_Hotel.git',
   },
 ];
 
