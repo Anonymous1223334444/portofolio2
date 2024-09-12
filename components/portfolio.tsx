@@ -4,6 +4,9 @@ import { useState, useEffect, createContext, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, Github, Linkedin, Mail, Send, Moon, Sun, Menu, X } from 'lucide-react'
 import Image from 'next/image';
+import Script from "next/script";
+// import Head from "next/head"  
+// import { useRouter } from "next/router";
 
 type Theme = 'light' | 'dark'
 const BackgroundGraphs = () => {
@@ -210,16 +213,16 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Logo() {
-  const { theme } = useContext(ThemeContext)
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="40" height="40" rx="8" fill={theme === 'dark' ? '#3B82F6' : '#1D4ED8'} />
-      <path d="M12 28L20 12L28 28" stroke={theme === 'dark' ? '#1F2937' : '#FFFFFF'} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M16 20H24" stroke={theme === 'dark' ? '#1F2937' : '#FFFFFF'} strokeWidth="4" strokeLinecap="round" />
-    </svg>
-  )
-}
+// function Logo() {
+//   const { theme } = useContext(ThemeContext)
+//   return (
+//     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+//       <rect width="40" height="40" rx="8" fill={theme === 'dark' ? '#3B82F6' : '#1D4ED8'} />
+//       <path d="M12 28L20 12L28 28" stroke={theme === 'dark' ? '#1F2937' : '#FFFFFF'} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+//       <path d="M16 20H24" stroke={theme === 'dark' ? '#1F2937' : '#FFFFFF'} strokeWidth="4" strokeLinecap="round" />
+//     </svg>
+//   )
+// }
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useContext(ThemeContext)
@@ -251,7 +254,7 @@ function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Logo />
+            {/* <Logo /> */}
             <a href="#" className="ml-2 text-xl font-bold">Andre SARR</a>
           </div>
           <div className="hidden md:block">
@@ -274,7 +277,7 @@ function NavBar() {
               onClick={toggleMenu}
               className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Ouvrir le menu</span>
               {isOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -311,6 +314,8 @@ function NavBar() {
     </nav>
   )
 }
+
+const GA_TRACKING_ID = "G-Y3CJQJ3T5D";
 
 export function Portfolio() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -377,9 +382,29 @@ export function Portfolio() {
 
   const skills = [
     "Python/Django", "Artificial Intelligence", "Next.js", "Flutter", "HTML/CSS", "JavaScript", "React", "Responsive Design"
-  ]
+  ];
 
   return (
+    <>
+    {/* Google Analytics Script */}
+    <Script
+      strategy="afterInteractive"
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+    />
+    <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
         <NavBar />
@@ -580,5 +605,6 @@ export function Portfolio() {
         </footer>
       </div>
     </ThemeProvider>
+    </>
   )
-}
+} 
