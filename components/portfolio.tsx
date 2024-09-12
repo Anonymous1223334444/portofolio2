@@ -78,14 +78,16 @@ const BackgroundGraphs = () => {
   );
 };
 const ScriptureSection = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <section className="relative py-24 bg-gray-900 text-white overflow-hidden">
+    <section className={`relative py-24 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} overflow-hidden`}>
       <div className="absolute inset-0 z-0">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
             <radialGradient id="herogradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" stopColor="rgba(59, 130, 246, 0.3)" />
-              <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
+              <stop offset="0%" stopColor={theme === 'dark' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(59, 130, 246, 0.1)'} />
+              <stop offset="100%" stopColor={theme === 'dark' ? 'rgba(59, 130, 246, 0)' : 'rgba(59, 130, 246, 0)'} />
             </radialGradient>
           </defs>
           <rect width="100" height="100" fill="url(#herogradient)" />
@@ -98,17 +100,17 @@ const ScriptureSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             &quot;For I know the plans I have for you,&quot; declares the LORD, &quot;plans to prosper you and not to harm you, plans to give you hope and a future.&quot;
           </h2>
-          <p className="text-xl md:text-2xl italic mb-8">Jeremiah 29:11</p>
+          <p className={`text-xl md:text-2xl italic mb-8 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Jeremiah 29:11</p>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="inline-block"
           >
-            <svg className="w-24 h-24 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className={`w-24 h-24 mx-auto ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
             </svg>
           </motion.div>
@@ -116,7 +118,7 @@ const ScriptureSection = () => {
       </div>
       <div className="absolute bottom-0 left-0 right-0">
         <svg className="w-full h-16" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M0,100 C40,0 60,0 100,100 Z" fill="#1F2937" />
+          <path d="M0,100 C40,0 60,0 100,100 Z" fill={theme === 'dark' ? '#111827' : '#F3F4F6'} />
         </svg>
       </div>
     </section>
