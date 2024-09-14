@@ -215,16 +215,6 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
-// function Logo() {
-//   const { theme } = useContext(ThemeContext)
-//   return (
-//     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-//       <rect width="40" height="40" rx="8" fill={theme === 'dark' ? '#3B82F6' : '#1D4ED8'} />
-//       <path d="M12 28L20 12L28 28" stroke={theme === 'dark' ? '#1F2937' : '#FFFFFF'} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-//       <path d="M16 20H24" stroke={theme === 'dark' ? '#1F2937' : '#FFFFFF'} strokeWidth="4" strokeLinecap="round" />
-//     </svg>
-//   )
-// }
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useContext(ThemeContext)
@@ -338,13 +328,6 @@ export function Portfolio() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormStatus('sending')
-
-    // const formData = new FormData(e.currentTarget) 
-    // const data = {
-    //   name: formData.get('name'),
-    //   email: formData.get('email'),
-    //   message: formData.get('message'),
-    // }
 
     try {
       const response = await fetch('/api/send-email', {
@@ -592,13 +575,13 @@ export function Portfolio() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">&copy; 2023 Andre SARR. All rights reserved.</p>
               <div className="flex space-x-6">
-                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-150 ease-in-out">
+                <a href="https://www.github.com/Anonymous1223334444" target='_blank' className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-150 ease-in-out">
                   <Github className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-150 ease-in-out">
+                <a href="https://www.linkedin.com/in/andré-sarr-8b87a1202" target='_blank' className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-150 ease-in-out">
                   <Linkedin className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-150 ease-in-out">
+                <a href="mailto:sarrandremichel@gmail.com" target='_blank' className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition duration-150 ease-in-out">
                   <Mail className="h-6 w-6" />
                 </a>
               </div>
