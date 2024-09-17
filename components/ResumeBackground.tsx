@@ -95,7 +95,7 @@ const ResumeBackground: React.FC = () => (
       <rect x="40" y="180" width="720" height="2" fill="#4169E1"/>
       <text x="40" y="210" fontSize="14" fill="#B0C4DE">
         <tspan x="40" dy="0">Self-taught developer with 4 years of coding experience and a passion for learning. Although I have</tspan>
-        <tspan x="40" dy="20">no professional experience yet, I've dedicated myself to mastering various programming languages</tspan>
+        <tspan x="40" dy="20">no professional experience yet, I&apos;ve dedicated myself to mastering various programming languages</tspan>
         <tspan x="40" dy="20">and technologies. Eager to apply my skills and contribute to innovative projects in a professional setting.</tspan>
       </text>
     </g>
@@ -161,7 +161,7 @@ const ResumeBackground: React.FC = () => (
       <rect x="40" y="870" width="720" height="2" fill="#4169E1"/>
       <text x="40" y="900" fontSize="18" fill="#fff">Engineering Technology Degree in Computer Science</text>
       <text x="40" y="925" fontSize="14" fill="#B0C4DE">Polythecnic School, 2023</text>
-      <text x="40" y="960" fontSize="18" fill="#fff">Associate's Degree Physics / Chemestry</text>
+      <text x="40" y="960" fontSize="18" fill="#fff">Associate&apos;s Degree Physics / Chemestry</text>
       <text x="40" y="985" fontSize="14" fill="#B0C4DE">Faculty of Science and Technology, 2020</text>
     </g>
     
