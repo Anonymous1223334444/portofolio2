@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Analytics } from '@vercel/analytics/react';
 import "./globals.css";
@@ -14,10 +13,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Andre Sarr",
-  description: "Andre Sarr portofolio",
-};
 
 export default function RootLayout({
   children,

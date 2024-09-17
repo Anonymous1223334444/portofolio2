@@ -1,15 +1,18 @@
 'use client'
 
 import { useState, useEffect, createContext, useContext } from 'react'
+import type { Metadata } from "next";
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, Github, Linkedin, Mail, Send, Moon, Sun, Menu, X } from 'lucide-react'
 import Image from 'next/image';
 import Script from "next/script";
-// import Head from "next/head"  
-// import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";  
 import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: "Andre Sarr",
+  description: "Andre Sarr portofolio",
+};
 type Theme = 'light' | 'dark'
 const BackgroundGraphs = () => {
   return (
@@ -365,8 +368,7 @@ export function Portfolio() {
 
       if (response.ok) {
         setFormStatus('success')
-        setFormData({ name: '', email: '', message: '' });
-        // e.currentTarget.reset()
+        setFormData({ name: '', email: '', message: '' });  
       } else {
         const errorData = await response.json();
         console.error('Server error:', errorData);
