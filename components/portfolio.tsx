@@ -164,7 +164,7 @@ const projects = [
     id: 2,
     title: 'AI Model for Sign Language Recognition - Flutter App Integration',
     description: 'Trained an AI model to recognize sign language gestures from images. Integrated the model into a Flutter app, enabling real-time gesture recognition and user interaction. Conducted extensive testing and optimization to improve model accuracy and performance.',
-    imgSrc: '/images/ai3.PNG',
+    imgSrc: '/images/decrypt.png',
     caseStudyLink: 'https://not-deployed-yet.vercel.app/',
     githubLink: 'https://github.com/Anonymous1223334444/decryptage_de_geste.git',
   },
