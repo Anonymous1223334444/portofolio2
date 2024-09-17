@@ -7,6 +7,8 @@ import Image from 'next/image';
 import Script from "next/script";
 // import Head from "next/head"  
 // import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";  
+import Link from 'next/link';
 
 type Theme = 'light' | 'dark'
 const BackgroundGraphs = () => {
@@ -77,6 +79,28 @@ const BackgroundGraphs = () => {
     </div>
   );
 };
+
+function CVLink() {
+  const router = useRouter();
+
+  const handleViewCV = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.push('/resume');
+  };
+
+  return (
+    <Link 
+      href="/resume"
+      onClick={handleViewCV}
+      target='_blank'
+      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out"
+    >
+      View My CV
+      <ChevronRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+    </Link>
+  );
+}     
+
 const ScriptureSection = () => {
   const { theme } = useContext(ThemeContext)
 
@@ -310,6 +334,7 @@ function NavBar() {
 const GA_TRACKING_ID = "G-Y3CJQJ3T5D";
 
 export function Portfolio() {
+  // const router = useRouter();
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [formData, setFormData] = useState({
     name: '',
@@ -425,13 +450,8 @@ export function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <a
-                  href="https://drive.google.com/file/d/1hpTmODv1C0hmLk3kyYelXseiusDax9sz/view?usp=drive_link" target='_blank'
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out"
-                >
-                  View My CV
-                  <ChevronRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-                </a>
+                <CVLink />
+
               </motion.div>
             </div>
           </section>
