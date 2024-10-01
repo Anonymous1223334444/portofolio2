@@ -164,7 +164,7 @@ const projects = [
     id: 2,
     title: 'AI Model for Sign Language Recognition - Flutter App Integration',
     description: 'Trained an AI model to recognize sign language gestures from images. Integrated the model into a Flutter app, enabling real-time gesture recognition and user interaction. Conducted extensive testing and optimization to improve model accuracy and performance.',
-    imgSrc: '/images/decrypt.png',
+    imgSrc: '/images/decrypt.png',  
     caseStudyLink: 'https://not-deployed-yet.vercel.app/',
     githubLink: 'https://github.com/Anonymous1223334444/decryptage_de_geste.git',
   },
@@ -181,7 +181,7 @@ const projects = [
     title: 'E-Learning Platform',
     description: 'E-Learning Platform created with PHP and in which I experiment the api stripe checkout as payment gateway.',
     imgSrc: '/images/e-learning.PNG',
-    caseStudyLink: 'https://not-deployed-yet.vercel.app/',
+    caseStudyLink: 'https://youtu.be/IG1Z6SSxNWY?feature=shared',
     githubLink: 'https://github.com/Anonymous1223334444/web_project_semi_final.git',
   },
   {
